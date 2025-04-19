@@ -1,0 +1,70 @@
+/******** 
+reset 
+********/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/******** 
+common
+********/
+
+.container {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.debug {
+  /* display: none; */
+  border: 1px dashed #000000;
+}
+
+.none {
+  display: none;
+}
+
+.inl {
+  display: inline;
+}
+
+.inl-bl {
+  display: inline-block;
+}
+
+
+
+
+/******** 
+body
+********/
+
+body {
+  font-family: Verdana, sans-serif;
+  background-color: #f0f0f0;
+  color: #222;
+}
+
+
+
+/******** 
+header
+********/
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+header nav {
+  display: flex;
+  gap: 30px;
+}
+
+.active {
+  color: red;
+}

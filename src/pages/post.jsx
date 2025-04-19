@@ -1,16 +1,17 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom";
-export default function PostsList() {
+import { useParams } from "react-router-dom";
+export default function Post() {
+    const { id } = useParams()
 
-    const [posts, setPosts] = useState([])
+    const [post, setPost] = useState({})
 
     const url = 'https://jsonplaceholder.typicode.com/posts'
 
     useEffect(() => {
-        axios.get(url)
+        axios.get(url + '/' + id)
             .then(element =>
-                setPosts(element.data)
+                setPost(element.data)
             )
             .catch(error =>
                 console.log(error)
@@ -18,10 +19,9 @@ export default function PostsList() {
     }, [])
 
     return <ul>
-        {posts.map(post => <li key={post.id}>
+        <li>
             <h3>{post.title}</h3>
             <p>{post.body}</p>
-            <Link to={`/dettaglio-post/${post.id}`}>dettaglio post</Link>
-        </li>)}
+        </li>
     </ul>
 }
